@@ -9,16 +9,16 @@ class Window(object):
         self.start_game()
 
     def start_game(self):
-        global imag1
+        global imag1,imag2
         self.lf = tk.LabelFrame(self.master)
         self.lbl = tk.Label(self.lf, image=imag1)
         self.lbl.pack()
         self.btn_computer = tk.Button(self.lf, text='电脑先手', command=self.create_board)
-        self.btn_computer.place(x=40, y=0)
+        self.btn_computer.place(x=45, y=267)
         self.btn_user = tk.Button(self.lf, text='玩家先手', command=self.create_board)
-        self.btn_user.place(x=160, y=0)
+        self.btn_user.place(x=172, y=267)
         self.lf.pack()
-    # 开始游戏
+    # 开始游戏界面
 
     def create_board(self):
         if self.lf:
@@ -38,15 +38,9 @@ class Window(object):
         self.can.bind("<ButtonRelease-1>", self.circles)
         self.btn1 = tk.Button(self.master, text='重新开始', command=self.create_board)
         self.btn1.place(x=105, y=273)
-        self.btn2 = tk.Button(self.master, text='保存', command=self.save)
+        self.btn2 = tk.Button(self.master, text='保存')
         self.btn2.place(x=120, y=0)
-    # 画布绘制
-
-    def save(self):
-        {
-
-        }
-    # 保存函数
+    # 绘制棋盘
 
     def circles(self, event):
         for i in range(30, 191, 80):
@@ -68,7 +62,6 @@ class Window(object):
 root = tk.Tk()
 root.title('井字棋')
 root.geometry("300x300+550+150")
-imag1 = tk.PhotoImage(file='image/开始界面.png')
-imag2 = tk.PhotoImage(file='image/开始按钮.png')
+imag1 = tk.PhotoImage(file='image/开始界面2.png')
 Window(root)
 root.mainloop()
