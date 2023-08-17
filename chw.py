@@ -1,9 +1,9 @@
 import numpy as np
 class game():
-    def __init__(self,player=1):
+    def __init__(self,player=1):#初始化,默认player为1
         self.data=np.zeros([3,3])
         self.player=player
-    def action(self,position):
+    def action(self,position):#接受一个二维的数组，并将其操作在图片上
         num=[1,2]
         if self.data[position[0],position[1]] not in num:
             self.data[position[0],position[1]]=self.player
@@ -11,20 +11,20 @@ class game():
             return 0
         else:
             return "error"
-        pass
+        pass##
     def daction(self,position):
         num=[1,2]
         if self.data[position[0],position[1]] in num:
             self.data[position[0], position[1]]=0
             self.player=self.next_player(self.player)
-    def get_ob(self):
+    def get_ob(self):#获取画面信息，以3*3的信息
         return self.data
         pass
-    def judge_self(self):
+    def judge_self(self):#judge一下游戏是否结束
         return self.judge(self.data)
-        pass
+        pass#
     def judge(self,data):
-        #0:继续 1:红方胜利 2:黑方胜利 3:平局
+        #0:继续 1:player1胜利 2:player2胜利 3:平局
         is_game_over=False
         winner=None
         for i in range(3):
@@ -44,12 +44,12 @@ class game():
         return 0
 
         pass
-    def reset(self,player=1):
+    def reset(self,player=1):#重置棋局
         self.data=np.zeros([3,3])
         self.player=player
-    def save(self):
+    def save(self):#保存
         pass
-    def load(self):
+    def load(self):#加载
         pass
     def next_player(self,player):
         play={1:2,2:1}

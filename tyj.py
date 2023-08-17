@@ -1,6 +1,7 @@
 import tkinter as tk
 from tkinter import messagebox
-
+from chw import *
+Game=game()
 
 class Window(object):
     def __init__(self, master,imag1):
@@ -20,17 +21,17 @@ class Window(object):
         self.btn_computer = tk.Button(self.master, text='保存',command=lambda:self.save()).place(x=400,y=0,width=100, height=30)
         self.btn_user = tk.Button(self.master, text='加载').place(x=400,y=100,width=100, height=30)
     def save(self):
-        Func_Save
+        Game.save()
     def action(self,position):
-        func_action(position)
-        observation=game.get_ob()
-        draw(observation)
+        Game.action(position)
+        observation=Game.get_ob()
+
     # 画叉
 
 if __name__=="__main__":
     root = tk.Tk()
     root.title('井字棋')
-    root.geometry("500x300+550+150")
+    root.geometry("500x300")
     imag1 = tk.PhotoImage(file='image/开始界面.png')
     Window(root, imag1)
     root.mainloop()
