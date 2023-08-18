@@ -1,4 +1,8 @@
 import numpy as np
+import pickle
+import tkinter as tk
+from tkinter import filedialog
+import os
 class game():
     def __init__(self,player=1):#初始化,默认player为1
         self.data=np.zeros([3,3])
@@ -32,7 +36,7 @@ class game():
                 is_game_over,winner=True,data[i][0]
         for i in range(3):
             if data[0][i]==data[1][i]==data[2][i] !=0:
-                is_game_over,winner=True,data[i][0]
+                is_game_over,winner=True,data[0][i]
         if data[0][0]==data[1][1]==data[2][2]!=0:
             is_game_over, winner = True, data[0][0]
         if data[2][0]==data[1][1]==data[0][2]!=0:
@@ -47,14 +51,33 @@ class game():
     def reset(self,player=1):#重置棋局
         self.data=np.zeros([3,3])
         self.player=player
-    def save(self):#保存
+    def save(self,root):#保存
+        data=[self.data,self.player]
+        def save_file():
+            text=text_box.get()
+            file_path="data/"+text+".pkl"
+            with open(file_path,"wb") as file:
+                pickle.dump(data,file)
+        text_box=tk.Entry(root)
+        text_box.pack()
+        save_button = tk.Button(root, text="Save", command=save_file)
+        save_button.pack()
+        root.mainloop()
         pass
     def load(self):#加载
+        file_path = os.path.abspath(__file__)
+        folder_path = os.path.dirname(file_path)
+        file_path = filedialog.askopenfilename(initialdir=folder_path+"\data"
+                                                 ,defaultextension=".pkl")
+        with open(file_path, 'rb') as file:
+            file_contents =pickle.load(file)
+        self.data,self.player=file_contents[0],file_contents[1]
+        print(self.data)
+        print(self.player)
         pass
     def next_player(self,player):
         play={1:2,2:1}
         return play[player]
-    pass
 class search():
     def __init__(self):
         self.player=None
@@ -83,7 +106,7 @@ class search():
         pass
     def evaluate(self,game):
         score=game.judge_self()
-        score_dir={1:{3:0,1:-1,2:1,0:0},2:{3:0,1:1,2:-1,0:0}}
+        score_dir={2:{3:0,1:-1,2:1,0:0},1:{3:0,1:1,2:-1,0:0}}
         return score_dir[self.player][score]
         pass
     def get_possible_moves(self,game):
@@ -114,10 +137,5 @@ class search():
         return move
 if __name__=="__main__":
    game=game()
-   Search = search()
-   game.action([1, 1])
-   import time
-   time1=time.time()
-   Search(game.get_ob(),5,game,game.player)
-   print(time.time()-time1)
-   pass
+   root = tk.Tk()
+   game.load()
