@@ -132,7 +132,7 @@ class search():
     def forward(self,*args,**kwargs):
         deepth=args[0]
         game=args[1]
-        self.player=args[2]
+        self.player=game.player
         move=self.get_best_move(deepth,game)
         return move
 if __name__=="__main__":
