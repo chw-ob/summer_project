@@ -3,6 +3,7 @@ import pickle
 import tkinter as tk
 from tkinter import filedialog
 import os
+import tkinter.simpledialog as sd
 class game():
     def __init__(self,player=1):#初始化,默认player为1
         self.data=np.zeros([3,3])
@@ -51,19 +52,16 @@ class game():
     def reset(self,player=1):#重置棋局
         self.data=np.zeros([3,3])
         self.player=player
-    def save(self,root):#保存
-        data=[self.data,self.player]
-        def save_file():
-            text=text_box.get()
+    def save(self,root,player):#保存
+        data=[self.data,self.player,player]
+        def save_file(text):
             file_path="data/"+text+".pkl"
+            with open(file_path, 'wb') as f:
+                pass
             with open(file_path,"wb") as file:
                 pickle.dump(data,file)
-        text_box=tk.Entry(root)
-        text_box.pack()
-        save_button = tk.Button(root, text="Save", command=save_file)
-        save_button.pack()
-        root.mainloop()
-        pass
+        text = sd.askstring("输入框", "请输入文本:")
+        save_file(text)
     def load(self):#加载
         file_path = os.path.abspath(__file__)
         folder_path = os.path.dirname(file_path)
@@ -71,9 +69,8 @@ class game():
                                                  ,defaultextension=".pkl")
         with open(file_path, 'rb') as file:
             file_contents =pickle.load(file)
-        self.data,self.player=file_contents[0],file_contents[1]
-        print(self.data)
-        print(self.player)
+        self.data,self.player,player=file_contents[0],file_contents[1],file_contents[2]
+        return player
         pass
     def next_player(self,player):
         play={1:2,2:1}
