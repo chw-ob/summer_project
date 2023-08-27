@@ -52,15 +52,15 @@ class game():
     def reset(self,player=1):#重置棋局
         self.data=np.zeros([3,3])
         self.player=player
-    def save(self,root,player):#保存
-        data=[self.data,self.player,player]
+    def save(self,root,player,history,be):#保存
+        data=[self.data,self.player,player,history,be]
         def save_file(text):
             file_path="data/"+text+".pkl"
             with open(file_path, 'wb') as f:
                 pass
             with open(file_path,"wb") as file:
                 pickle.dump(data,file)
-        text = sd.askstring("输入框", "请输入文本:")
+        text = sd.askstring("输入框", "请输入存档名字:")
         save_file(text)
     def load(self):#加载
         file_path = os.path.abspath(__file__)
@@ -69,8 +69,9 @@ class game():
                                                  ,defaultextension=".pkl")
         with open(file_path, 'rb') as file:
             file_contents =pickle.load(file)
-        self.data,self.player,player=file_contents[0],file_contents[1],file_contents[2]
-        return player
+        print(file_contents)
+        self.data,self.player,player,history,be=file_contents[0],file_contents[1],file_contents[2],file_contents[3],file_contents[4]
+        return player,history,be
         pass
     def next_player(self,player):
         play={1:2,2:1}

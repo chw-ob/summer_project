@@ -10,7 +10,9 @@ class Window(object):
         self.creat_board()
         self.creat_btn()
         self.player=1
+        self.be_player=1
         self.lbl3=[]
+        self.history=[]
     def creat_board(self):
         self.can = tk.Canvas(self.master, width=300, height=300)
         self.can.create_line((30, 30), (270, 30), width=2)
@@ -36,32 +38,45 @@ class Window(object):
         self.btn_aif = tk.Button(self.master, text='人机先手', command=lambda: self.setf(2))\
             .place(x=300, y=150, width=100,height=30)
         self.btn_esc = tk.Button(self.master, text='退出', command=lambda: self.quit()) \
-            .place(x=300, y=200, width=100, height=30)
+            .place(x=300, y=180, width=100, height=30)
+        self.btn_esc = tk.Button(self.master, text='查看历史步骤', command=lambda: self.search_history()) \
+            .place(x=300, y=180, width=100, height=30)
 
     def quit(self):
+        self.master.destroy()
         pass
 
     def save(self):
-        Game.save(self.master,self.player)
-
+        Game.save(self.master,self.player,self.history,self.be_player)
+    def search_history(self):
+        string='你是'
+        string +="红方\n" if self.be_player==1 else "黑方\n"
+        for i in range(len(self.history)):
+            if i%2==0:
+                string+="红方:"+"(%d,%d)\n"%(self.history[i][0],self.history[i][1])
+            else:
+                string+="黑方:"+"(%d,%d)\n"%(self.history[i][0],self.history[i][1])
+        tk.messagebox.showinfo("历史步骤",string)
     def load(self):
-        player=Game.load()
+        player,self.history,self.be_player=Game.load()
         self.update_ob()
-        self.setf(player)
+        self.player=player
     def reset(self):
         Game.reset()
+        self.player=self.be_player=1
+        self.history=[]
         self.update_ob()
         self.creat_board()
     def setf(self, whof):
         self.reset()
         self.player=whof
-
+        self.be_player=whof
         if whof==2:
             self.move(0,True)
-
     def update_ob(self):
-        print("start drawing")
+        #print("start drawing")
         board = Game.get_ob()
+        #print(board)
         for i in self.lbl3:
             i.destroy()
         self.lbl3=[]
@@ -77,7 +92,6 @@ class Window(object):
 
 
     def move(self, event,B=False):
-        #print("yes")
         if self.player == 1:
             for i in range(30, 191, 80):
                 for j in range(30, 191, 80):
@@ -88,6 +102,7 @@ class Window(object):
                         break
             position = self.position
             Game.action(position)
+            self.history.append(position)
             self.update_ob()
             self.result(self.judge())
             self.player=2
@@ -100,6 +115,7 @@ class Window(object):
             if position==None:
                 return
             Game.action(position)
+            self.history.append(position)
             self.update_ob()
             self.result(self.judge())
             self.player=1
@@ -107,12 +123,15 @@ class Window(object):
         return Game.judge_self()
 
     def result(self, whow):
-        if whow == 1:
-            tk.messagebox.showinfo('游戏结束', '恭喜您获胜')
-        elif whow == 2:
-            tk.messagebox.showinfo('游戏结束', '人机获胜，您失败了')
-        elif whow == 3:
+        print(whow,self.player)
+        if whow==0:
+            return
+        if whow == 3:
             tk.messagebox.showinfo('游戏结束', '平局')
+        elif  whow==self.be_player :
+            tk.messagebox.showinfo('游戏结束', '恭喜您获胜')
+        elif whow != self.be_player:
+            tk.messagebox.showinfo('游戏结束', '人机获胜，您失败了')
 
 
 if __name__ == "__main__":
@@ -122,7 +141,7 @@ if __name__ == "__main__":
     root.title('井字棋')
     root.geometry("400x300")
     window = Window(root)
-    imag1 = tk.PhotoImage(file='image/image/开始界面2.png')
-    imag2 = tk.PhotoImage(file='image/image/圈.png')
-    imag3 = tk.PhotoImage(file='image/image/叉.png')
+    imag1 = tk.PhotoImage(file='summer project/image/image/开始界面2.png')
+    imag2 = tk.PhotoImage(file='summer project/image/image/圈.png')
+    imag3 = tk.PhotoImage(file='summer project/image/image/叉.png')
     root.mainloop()
