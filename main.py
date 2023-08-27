@@ -53,7 +53,11 @@ class Window(object):
         self.update_ob()
         self.creat_board()
     def setf(self, whof):
+        self.reset()
         self.player=whof
+
+        if whof==2:
+            self.move(0,True)
 
     def update_ob(self):
         print("start drawing")
@@ -72,28 +76,30 @@ class Window(object):
 
 
 
-    def move(self, event):
+    def move(self, event,B=False):
         #print("yes")
         if self.player == 1:
             for i in range(30, 191, 80):
                 for j in range(30, 191, 80):
                     if j <= event.x < j + 80 and i <= event.y < i + 80:
-                        print(event.x, event.y)
                         self.position=list(self.position)
                         self.position[0] = i//80
                         self.position[1] = j//80
                         break
             position = self.position
             Game.action(position)
-            print(Game.get_ob())
             self.update_ob()
             self.result(self.judge())
             self.player=2
+            self.move(event)
         elif self.player == 2:
-            print(1)
-            position = ser(9, Game)
+            if B == True:
+                position=[1,1]
+            else:
+                position = ser(9, Game)
+            if position==None:
+                return
             Game.action(position)
-            print(Game.get_ob())
             self.update_ob()
             self.result(self.judge())
             self.player=1
