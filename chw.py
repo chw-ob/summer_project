@@ -337,8 +337,25 @@ class search():
         self.player=game.player
         move=self.get_best_move(deepth,game)
         return move
+"""
+
+    .. automethod:: MyTestCase
+"""
 class MyTestCase(unittest.TestCase):
+    """
+
+    单元测试代码，仅做测试用
+
+    """
     def test_game_get_ob(self):
+        """
+
+        单元测试代码
+
+        :return:
+
+        .. automethod::test_game_get_ob
+        """
         Game = game()
         #Game.action([1, 1])
         inf = Game.get_ob()
