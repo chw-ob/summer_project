@@ -126,7 +126,7 @@ class Window(object):
         self.btn_aif = tk.Button(self.master, text='人机先手', command=lambda: self.setf(2))\
             .place(x=300, y=150, width=100,height=30)
         self.btn_esc = tk.Button(self.master, text='退出', command=lambda: self.quit()) \
-            .place(x=300, y=180, width=100, height=30)
+            .place(x=300, y=210, width=100, height=30)
         self.btn_esc = tk.Button(self.master, text='查看历史步骤', command=lambda: self.search_history()) \
             .place(x=300, y=180, width=100, height=30)
 
@@ -145,7 +145,8 @@ class Window(object):
 
         :return: 没有返回值
         """
-        Game.save(self.player,self.history,self.be_player)
+        inf=[self.player,self.history,self.be_player]
+        Game.save(inf)
     def search_history(self):
         """
         显示历史步骤
