@@ -282,10 +282,10 @@ if __name__ == "__main__":
     root.title('井字棋')
     root.geometry("400x300")
     window = Window(root)
-    imag1 = tk.PhotoImage(file='summer_project/image/image/开始界面2.png')
+    '''imag1 = tk.PhotoImage(file='summer_project/image/image/开始界面2.png')
     imag2 = tk.PhotoImage(file='summer_project/image/image/圈.png')
-    imag3 = tk.PhotoImage(file='summer_project/image/image/叉.png')
-    '''imag1 = tk.PhotoImage(file='image/image/开始界面2.png')
+    imag3 = tk.PhotoImage(file='summer_project/image/image/叉.png')'''
+    imag1 = tk.PhotoImage(file='image/image/开始界面2.png')
     imag2 = tk.PhotoImage(file='image/image/圈.png')
-    imag3 = tk.PhotoImage(file='image/image/叉.png')'''
+    imag3 = tk.PhotoImage(file='image/image/叉.png')
     root.mainloop()
