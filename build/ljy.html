@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>刘俊宇 &mdash; 井字棋  文档</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=7d86a446"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="_static/translations.js?v=beaddf03"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="搜索" href="search.html" />
+    <link rel="next" title="程序入口" href="main.html" />
+    <link rel="prev" title="Welcome to 井字棋’s documentation!" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            井字棋
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="搜索文档" aria-label="搜索文档" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="导航菜单">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">刘俊宇</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#ljy.MyTestCase"><code class="docutils literal notranslate"><span class="pre">MyTestCase</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#ljy.MyTestCase.test_window_result"><code class="docutils literal notranslate"><span class="pre">MyTestCase.test_window_result()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ljy.MyTestCase.test_window_update_ob"><code class="docutils literal notranslate"><span class="pre">MyTestCase.test_window_update_ob()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#ljy.Window"><code class="docutils literal notranslate"><span class="pre">Window</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#ljy.Window.__init__"><code class="docutils literal notranslate"><span class="pre">Window.__init__()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id0"><code class="docutils literal notranslate"><span class="pre">Window.__init__()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ljy.Window.creat_board"><code class="docutils literal notranslate"><span class="pre">Window.creat_board()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ljy.Window.creat_btn"><code class="docutils literal notranslate"><span class="pre">Window.creat_btn()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ljy.Window.judge"><code class="docutils literal notranslate"><span class="pre">Window.judge()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ljy.Window.load"><code class="docutils literal notranslate"><span class="pre">Window.load()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ljy.Window.move"><code class="docutils literal notranslate"><span class="pre">Window.move()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ljy.Window.quit"><code class="docutils literal notranslate"><span class="pre">Window.quit()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ljy.Window.reset"><code class="docutils literal notranslate"><span class="pre">Window.reset()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ljy.Window.result"><code class="docutils literal notranslate"><span class="pre">Window.result()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ljy.Window.save"><code class="docutils literal notranslate"><span class="pre">Window.save()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ljy.Window.setf"><code class="docutils literal notranslate"><span class="pre">Window.setf()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ljy.Window.update_ob"><code class="docutils literal notranslate"><span class="pre">Window.update_ob()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="main.html">程序入口</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="移动版导航菜单" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">井字棋</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="页面导航">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">刘俊宇</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/ljy.rst.txt" rel="nofollow"> 查看页面源码</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="id1">
+<h1>刘俊宇<a class="headerlink" href="#id1" title="Link to this heading"></a></h1>
+<dl class="py class" id="module-ljy">
+<dt class="sig sig-object py" id="ljy.MyTestCase">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ljy.</span></span><span class="sig-name descname"><span class="pre">MyTestCase</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">methodName</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'runTest'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ljy.MyTestCase" title="Link to this definition"></a></dt>
+<dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">TestCase</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="ljy.MyTestCase.test_window_result">
+<span class="sig-name descname"><span class="pre">test_window_result</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ljy.MyTestCase.test_window_result" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ljy.MyTestCase.test_window_update_ob">
+<span class="sig-name descname"><span class="pre">test_window_update_ob</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ljy.MyTestCase.test_window_update_ob" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ljy.Window">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ljy.</span></span><span class="sig-name descname"><span class="pre">Window</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">master</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ljy.Window" title="Link to this definition"></a></dt>
+<dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="ljy.Window.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">master</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ljy.Window.__init__" title="Link to this definition"></a></dt>
+<dd><p>初始化</p>
+<p>master:接受外界利用tkinter创建的root</p>
+<p>can:用于表示在master上创建的画布</p>
+<p>imag1:游戏最初开始界面所需图像</p>
+<dl class="simple">
+<dt>position:一个一维数组,用于存储鼠标点击的位置信息</dt><dd><p>[0,1]表示第一行第二个位置
+[1,2]表示第二行第三个位置
+[2,2]表示第三行第三个位置</p>
+</dd>
+</dl>
+<p>creat_board():初始化游戏棋盘</p>
+<p>creat_btn():初始化游戏功能性按钮</p>
+</dd></dl>
+
+<p>井字棋的窗口类</p>
+<p>这个类用于创造进行游戏的窗口界面</p>
+<dl>
+<dt>属性：</dt><dd><p>master:利用tkinter创建的root</p>
+<p>can:利用tkinter创建的canvas</p>
+<p>imag1:游戏最初开始界面所需图像</p>
+<p>position:存储鼠标点击的位置信息</p>
+</dd>
+<dt>方法：</dt><dd><p>creat_board:创建3*3的棋盘</p>
+<p>creat_btn:创建一系列交互按钮</p>
+<p>quit:退出游戏(用于接收函数)</p>
+<p>save:保存游戏(用于接收函数)</p>
+<p>load:加载之前保存过的游戏(用于接收函数)</p>
+<p>reset:重新开始(用于接收函数)</p>
+<p>setf:设置先手</p>
+<p>update_ob:处理棋盘data数据,更新棋盘,画出图像</p>
+<p>move:用于获取鼠标信息,更新棋盘data数据</p>
+<p>judge:用于判断游戏进程(用于接受函数),返回一个int值表示游戏进程</p>
+<p>result:若游戏结束,则弹窗提示</p>
+</dd>
+<dt>示例：</dt><dd><p>window = Window(root, imag1)</p>
+<p>setf(1)</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Noindex<span class="colon">:</span></dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="id0">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">master</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id0" title="Link to this definition"></a></dt>
+<dd><p>初始化</p>
+<p>master:接受外界利用tkinter创建的root</p>
+<p>can:用于表示在master上创建的画布</p>
+<p>imag1:游戏最初开始界面所需图像</p>
+<dl class="simple">
+<dt>position:一个一维数组,用于存储鼠标点击的位置信息</dt><dd><p>[0,1]表示第一行第二个位置
+[1,2]表示第二行第三个位置
+[2,2]表示第三行第三个位置</p>
+</dd>
+</dl>
+<p>creat_board():初始化游戏棋盘</p>
+<p>creat_btn():初始化游戏功能性按钮</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ljy.Window.creat_board">
+<span class="sig-name descname"><span class="pre">creat_board</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ljy.Window.creat_board" title="Link to this definition"></a></dt>
+<dd><p>用于创建游戏棋盘</p>
+<dl class="field-list simple">
+<dt class="field-odd">返回<span class="colon">:</span></dt>
+<dd class="field-odd"><p>没有返回值</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ljy.Window.creat_btn">
+<span class="sig-name descname"><span class="pre">creat_btn</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ljy.Window.creat_btn" title="Link to this definition"></a></dt>
+<dd><p>用于创建功能按钮</p>
+<p>:return:没有返回值</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ljy.Window.judge">
+<span class="sig-name descname"><span class="pre">judge</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ljy.Window.judge" title="Link to this definition"></a></dt>
+<dd><p>用于判断游戏进程(用于接收函数)</p>
+<dl class="field-list simple">
+<dt class="field-odd">返回<span class="colon">:</span></dt>
+<dd class="field-odd"><p>返回一个int值,0:继续,1:player1胜利,2:player2胜利,3:平局</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ljy.Window.load">
+<span class="sig-name descname"><span class="pre">load</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ljy.Window.load" title="Link to this definition"></a></dt>
+<dd><p>用于加载之前的游戏(用于接收函数)</p>
+<dl class="field-list simple">
+<dt class="field-odd">返回<span class="colon">:</span></dt>
+<dd class="field-odd"><p>没有返回值</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ljy.Window.move">
+<span class="sig-name descname"><span class="pre">move</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ljy.Window.move" title="Link to this definition"></a></dt>
+<dd><p>用于获取鼠标信息,更新棋盘data数据</p>
+<dl class="field-list simple">
+<dt class="field-odd">参数<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>event</strong> – 为鼠标信息,通过鼠标信息判断玩家点击位置,进而更新棋盘data数据</p>
+</dd>
+<dt class="field-even">返回<span class="colon">:</span></dt>
+<dd class="field-even"><p>没有返回值</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ljy.Window.quit">
+<span class="sig-name descname"><span class="pre">quit</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ljy.Window.quit" title="Link to this definition"></a></dt>
+<dd><p>用于退出游戏(用于接收函数)</p>
+<dl class="field-list simple">
+<dt class="field-odd">返回<span class="colon">:</span></dt>
+<dd class="field-odd"><p>没有返回值</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ljy.Window.reset">
+<span class="sig-name descname"><span class="pre">reset</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ljy.Window.reset" title="Link to this definition"></a></dt>
+<dd><p>用于重新开始游戏(用于接收函数)</p>
+<dl class="field-list simple">
+<dt class="field-odd">返回<span class="colon">:</span></dt>
+<dd class="field-odd"><p>没有返回值</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ljy.Window.result">
+<span class="sig-name descname"><span class="pre">result</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">whow</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ljy.Window.result" title="Link to this definition"></a></dt>
+<dd><p>若游戏结束,则弹窗提示</p>
+<dl class="field-list simple">
+<dt class="field-odd">参数<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>whow</strong> – 游戏结束后最终结果,默认:1-&gt;玩家胜利 2-&gt;人机胜利 3-&gt;平局</p>
+</dd>
+<dt class="field-even">返回<span class="colon">:</span></dt>
+<dd class="field-even"><p>返回值1 2 3用于单元测试</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ljy.Window.save">
+<span class="sig-name descname"><span class="pre">save</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ljy.Window.save" title="Link to this definition"></a></dt>
+<dd><p>用于保存游戏(用于接收函数)</p>
+<dl class="field-list simple">
+<dt class="field-odd">返回<span class="colon">:</span></dt>
+<dd class="field-odd"><p>没有返回值</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ljy.Window.setf">
+<span class="sig-name descname"><span class="pre">setf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">whof</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ljy.Window.setf" title="Link to this definition"></a></dt>
+<dd><p>用于设置先手</p>
+<p>:param whof:whof为1默认表示玩家先手,为2默认表示人机先手</p>
+<p>:return:没有返回值</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ljy.Window.update_ob">
+<span class="sig-name descname"><span class="pre">update_ob</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Game</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ljy.Window.update_ob" title="Link to this definition"></a></dt>
+<dd><p>用于处理棋盘data数据,更新棋盘,画出图像</p>
+<dl class="field-list simple">
+<dt class="field-odd">参数<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>Game</strong> – 用于单元测试，实际使用会删除</p>
+</dd>
+<dt class="field-even">返回<span class="colon">:</span></dt>
+<dd class="field-even"><p>返回值lst用于单元测试</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="页脚">
+        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to 井字棋’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="main.html" class="btn btn-neutral float-right" title="程序入口" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2023, chw。</p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

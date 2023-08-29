@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>陈汉文 &mdash; 井字棋  文档</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=7d86a446"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="_static/translations.js?v=beaddf03"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="搜索" href="search.html" />
+    <link rel="next" title="刘俊宇" href="ljy.html" />
+    <link rel="prev" title="Welcome to 井字棋’s documentation!" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            井字棋
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="搜索文档" aria-label="搜索文档" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="导航菜单">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">陈汉文</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#chw.MyTestCase"><code class="docutils literal notranslate"><span class="pre">MyTestCase</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#chw.MyTestCase.test_foward"><code class="docutils literal notranslate"><span class="pre">MyTestCase.test_foward()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#chw.MyTestCase.test_game_action"><code class="docutils literal notranslate"><span class="pre">MyTestCase.test_game_action()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#chw.MyTestCase.test_game_daction"><code class="docutils literal notranslate"><span class="pre">MyTestCase.test_game_daction()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#chw.MyTestCase.test_game_get_ob"><code class="docutils literal notranslate"><span class="pre">MyTestCase.test_game_get_ob()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#chw.MyTestCase.test_judge"><code class="docutils literal notranslate"><span class="pre">MyTestCase.test_judge()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#chw.MyTestCase.test_judge_self"><code class="docutils literal notranslate"><span class="pre">MyTestCase.test_judge_self()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#chw.MyTestCase.test_next_player"><code class="docutils literal notranslate"><span class="pre">MyTestCase.test_next_player()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#chw.MyTestCase.test_reset"><code class="docutils literal notranslate"><span class="pre">MyTestCase.test_reset()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#chw.game"><code class="docutils literal notranslate"><span class="pre">game</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#chw.game.__init__"><code class="docutils literal notranslate"><span class="pre">game.__init__()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id0"><code class="docutils literal notranslate"><span class="pre">game.__init__()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#chw.game.action"><code class="docutils literal notranslate"><span class="pre">game.action()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#chw.game.daction"><code class="docutils literal notranslate"><span class="pre">game.daction()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#chw.game.get_ob"><code class="docutils literal notranslate"><span class="pre">game.get_ob()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#chw.game.judge"><code class="docutils literal notranslate"><span class="pre">game.judge()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#chw.game.judge_self"><code class="docutils literal notranslate"><span class="pre">game.judge_self()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#chw.game.load"><code class="docutils literal notranslate"><span class="pre">game.load()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#chw.game.next_player"><code class="docutils literal notranslate"><span class="pre">game.next_player()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#chw.game.reset"><code class="docutils literal notranslate"><span class="pre">game.reset()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#chw.game.save"><code class="docutils literal notranslate"><span class="pre">game.save()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#chw.search"><code class="docutils literal notranslate"><span class="pre">search</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#chw.search.evaluate"><code class="docutils literal notranslate"><span class="pre">search.evaluate()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#chw.search.forward"><code class="docutils literal notranslate"><span class="pre">search.forward()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#chw.search.get_best_move"><code class="docutils literal notranslate"><span class="pre">search.get_best_move()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#chw.search.get_possible_moves"><code class="docutils literal notranslate"><span class="pre">search.get_possible_moves()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#chw.search.minimax"><code class="docutils literal notranslate"><span class="pre">search.minimax()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ljy.html">刘俊宇</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tyj.html">滕跃骏</a></li>
+<li class="toctree-l1"><a class="reference internal" href="main.html">主程序入口</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="移动版导航菜单" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">井字棋</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="页面导航">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">陈汉文</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/chw.rst.txt" rel="nofollow"> 查看页面源码</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="id1">
+<h1>陈汉文<a class="headerlink" href="#id1" title="Link to this heading"></a></h1>
+<dl class="py class" id="module-chw">
+<dt class="sig sig-object py" id="chw.MyTestCase">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">chw.</span></span><span class="sig-name descname"><span class="pre">MyTestCase</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">methodName</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'runTest'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#chw.MyTestCase" title="Link to this definition"></a></dt>
+<dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">TestCase</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="chw.MyTestCase.test_foward">
+<span class="sig-name descname"><span class="pre">test_foward</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#chw.MyTestCase.test_foward" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="chw.MyTestCase.test_game_action">
+<span class="sig-name descname"><span class="pre">test_game_action</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#chw.MyTestCase.test_game_action" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="chw.MyTestCase.test_game_daction">
+<span class="sig-name descname"><span class="pre">test_game_daction</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#chw.MyTestCase.test_game_daction" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="chw.MyTestCase.test_game_get_ob">
+<span class="sig-name descname"><span class="pre">test_game_get_ob</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#chw.MyTestCase.test_game_get_ob" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="chw.MyTestCase.test_judge">
+<span class="sig-name descname"><span class="pre">test_judge</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#chw.MyTestCase.test_judge" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="chw.MyTestCase.test_judge_self">
+<span class="sig-name descname"><span class="pre">test_judge_self</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#chw.MyTestCase.test_judge_self" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="chw.MyTestCase.test_next_player">
+<span class="sig-name descname"><span class="pre">test_next_player</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#chw.MyTestCase.test_next_player" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="chw.MyTestCase.test_reset">
+<span class="sig-name descname"><span class="pre">test_reset</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#chw.MyTestCase.test_reset" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="chw.game">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">chw.</span></span><span class="sig-name descname"><span class="pre">game</span></span><a class="headerlink" href="#chw.game" title="Link to this definition"></a></dt>
+<dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="chw.game.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#chw.game.__init__" title="Link to this definition"></a></dt>
+<dd><p>初始化</p>
+<dl class="simple">
+<dt>data：data是一个3*3的数组，其中的值有以下意思</dt><dd><p>0：空
+1：红方
+2：黑方</p>
+</dd>
+</dl>
+</dd></dl>
+
+<p>一个井字棋的环境类</p>
+<p>这个类用于提供游玩井字棋的环境，也即提供存储棋局信息，与棋局进行交互（下棋），进行相关操作（判定胜利，清空棋局）等功能</p>
+<dl>
+<dt>属性：</dt><dd><p>data（一个3*3的数组）：用于存储棋盘中的棋子位置</p>
+<p>player：表示当前下一步棋是谁写，1代表红方，2代表黑方</p>
+</dd>
+<dt>方法：</dt><dd><p>action：下棋</p>
+<p>daction：将某个位置下的棋退回，主要用于算法编写</p>
+<p>get_ob:返回data属性</p>
+<p>judge_self：对当前局面进行考察，看是否平局，或者其他情况</p>
+<p>judge：对输入的局面进行考察</p>
+<p>reset:重置整个棋局</p>
+<p>save：保存棋局文件</p>
+<p>load：加载棋局文件</p>
+<p>next_player：表示下一个游玩者是谁</p>
+</dd>
+<dt>示例：</dt><dd><p>mygame=game()</p>
+<p>mygame.action([1,1])</p>
+<p>judge=mygame.judge_self()</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Noindex<span class="colon">:</span></dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="id0">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#id0" title="Link to this definition"></a></dt>
+<dd><p>初始化</p>
+<dl class="simple">
+<dt>data：data是一个3*3的数组，其中的值有以下意思</dt><dd><p>0：空
+1：红方
+2：黑方</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="chw.game.action">
+<span class="sig-name descname"><span class="pre">action</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">position</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#chw.game.action" title="Link to this definition"></a></dt>
+<dd><p>用于下一步棋</p>
+<dl class="field-list simple">
+<dt class="field-odd">参数<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>position</strong> – 一个大小为2的数组，代表在下标为相应的位置下一步棋，比如【1,2】代表在data【1,2】下一棋</p>
+</dd>
+<dt class="field-even">返回<span class="colon">:</span></dt>
+<dd class="field-even"><p>如果下的位置合法:返回0，如果不合法：返回字符串：“error”</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="chw.game.daction">
+<span class="sig-name descname"><span class="pre">daction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">position</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#chw.game.daction" title="Link to this definition"></a></dt>
+<dd><p>将棋局某个地方的棋退回</p>
+<dl class="field-list simple">
+<dt class="field-odd">参数<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>position</strong> – 一个大小为2的数组，代表在下标为相应的位置退一步棋，比如【1,2】代表在data【1,2】置零</p>
+</dd>
+<dt class="field-even">返回<span class="colon">:</span></dt>
+<dd class="field-even"><p>没有返回值</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="chw.game.get_ob">
+<span class="sig-name descname"><span class="pre">get_ob</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#chw.game.get_ob" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">返回<span class="colon">:</span></dt>
+<dd class="field-odd"><p>返回data(3*3的数组)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="chw.game.judge">
+<span class="sig-name descname"><span class="pre">judge</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#chw.game.judge" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">参数<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>data</strong> – 即局面，一个合适的例子就是self.data</p>
+</dd>
+<dt class="field-even">返回<span class="colon">:</span></dt>
+<dd class="field-even"><p>返回输入的局面的游戏结果（0:继续 1:player1胜利 2:player2胜利 3:平局）</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="chw.game.judge_self">
+<span class="sig-name descname"><span class="pre">judge_self</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#chw.game.judge_self" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">返回<span class="colon">:</span></dt>
+<dd class="field-odd"><p>返回当前局面游戏结果（0:继续 1:player1胜利 2:player2胜利 3:平局）</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="chw.game.load">
+<span class="sig-name descname"><span class="pre">load</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#chw.game.load" title="Link to this definition"></a></dt>
+<dd><p>:return:返回保存时载入的额外信息</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="chw.game.next_player">
+<span class="sig-name descname"><span class="pre">next_player</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">player</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#chw.game.next_player" title="Link to this definition"></a></dt>
+<dd><p>返回下一次的棋手</p>
+<dl class="field-list simple">
+<dt class="field-odd">参数<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>player</strong> – 当前棋局的棋手</p>
+</dd>
+<dt class="field-even">返回<span class="colon">:</span></dt>
+<dd class="field-even"><p>下一位棋手</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="chw.game.reset">
+<span class="sig-name descname"><span class="pre">reset</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#chw.game.reset" title="Link to this definition"></a></dt>
+<dd><p>重置游戏局面</p>
+<p>:return:没有返回值</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="chw.game.save">
+<span class="sig-name descname"><span class="pre">save</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inf</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#chw.game.save" title="Link to this definition"></a></dt>
+<dd><p>保存文件</p>
+<p>:param pre_player:当前下棋的人(外部环境),仅用于保存</p>
+<dl class="field-list simple">
+<dt class="field-odd">参数<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>history</strong> – 游玩的历史步骤</p></li>
+<li><p><strong>player</strong> – 游玩棋局游戏的玩家，比如人机对战，若是人先手，则是1，否则则是2</p></li>
+</ul>
+</dd>
+<dt class="field-even">返回<span class="colon">:</span></dt>
+<dd class="field-even"><p>没有返回值</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="chw.search">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">chw.</span></span><span class="sig-name descname"><span class="pre">search</span></span><a class="headerlink" href="#chw.search" title="Link to this definition"></a></dt>
+<dd><p>基类：<code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>一个用于ai下棋的类</p>
+<dl class="simple">
+<dt>属性：</dt><dd><p>player：当前下棋的人</p>
+</dd>
+</dl>
+<p>方法：</p>
+<blockquote>
+<div><p>minimax：主要算法，用于计算下一步的最优解</p>
+<p>evaluate：评估当前局面的得分</p>
+<p>get_possible_moves：获得下一步棋可以下的位置集合</p>
+<p>get_best_move：获得最佳的效果</p>
+<p>forward：直接由局面得到ai的解，也即这个类直接调用的方法</p>
+</div></blockquote>
+<p>例子：</p>
+<p>mygame=game()</p>
+<p>Search=search()</p>
+<p>position=Search(depth,game)</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="chw.search.evaluate">
+<span class="sig-name descname"><span class="pre">evaluate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">game</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#chw.search.evaluate" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">参数<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>game</strong> – 即环境，就是class chw.game</p>
+</dd>
+<dt class="field-even">返回<span class="colon">:</span></dt>
+<dd class="field-even"><p>返回对当前局面的评估分数</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="chw.search.forward">
+<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#chw.search.forward" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">参数<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>args</strong> – 两个参数，game和depth，game就是chw:class game的实例，depth就是智能体的智能程度，难度从1-9变化</p></li>
+<li><p><strong>kwargs</strong> – 无</p></li>
+</ul>
+</dd>
+<dt class="field-even">返回<span class="colon">:</span></dt>
+<dd class="field-even"><p>返回最佳的位置</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="chw.search.get_best_move">
+<span class="sig-name descname"><span class="pre">get_best_move</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">depth</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">game</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#chw.search.get_best_move" title="Link to this definition"></a></dt>
+<dd><p>获取当前局面最好的位置</p>
+<dl class="field-list simple">
+<dt class="field-odd">参数<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>game</strong> – 即环境，就是class chw.game</p>
+</dd>
+<dt class="field-even">返回<span class="colon">:</span></dt>
+<dd class="field-even"><p>返回一个大小为2的list，代表位置</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="chw.search.get_possible_moves">
+<span class="sig-name descname"><span class="pre">get_possible_moves</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">game</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#chw.search.get_possible_moves" title="Link to this definition"></a></dt>
+<dd><p>获取当前局面所有可能可以下棋的位置</p>
+<dl class="field-list simple">
+<dt class="field-odd">参数<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>game</strong> – 即环境，就是class chw.game</p>
+</dd>
+<dt class="field-even">返回<span class="colon">:</span></dt>
+<dd class="field-even"><p>返回一个列表，列表里的每个元素都是一个大小为2的list，代表位置</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="chw.search.minimax">
+<span class="sig-name descname"><span class="pre">minimax</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">depth</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">game</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_min</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#chw.search.minimax" title="Link to this definition"></a></dt>
+<dd><p>极大极小值运算方法</p>
+<dl class="field-list simple">
+<dt class="field-odd">参数<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>depth</strong> – 一个参数，深度优先搜索的深度(表征机器的智能程度），井字棋最智能为9</p></li>
+<li><p><strong>game</strong> – 即环境，就是class chw.game</p></li>
+</ul>
+</dd>
+</dl>
+<p>:param is_min:一个算法的参数，表征</p>
+<dl class="field-list simple">
+<dt class="field-odd">返回<span class="colon">:</span></dt>
+<dd class="field-odd"><p>返回一个大小为2的数组</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="页脚">
+        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to 井字棋’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="ljy.html" class="btn btn-neutral float-right" title="刘俊宇" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2023, chw。</p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
